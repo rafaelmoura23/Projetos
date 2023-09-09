@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Definindo as cores que serão usadas como variáveis !INTERESSANTE! */
-:root { 
+:root {
     --clr-black: #1c1c1c;
     --clr-gray: #ececec;
     --clr-white: #f7f7f7;
@@ -29,7 +29,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* border-box leva em conta no cálculo a borda, ou seja, o width será a soma dos conteúdo com borda e padding  */
+    box-sizing: border-box;
+    /* border-box leva em conta no cálculo a borda, ou seja, o width será a soma dos conteúdo com borda e padding  */
     color: var(--clr-black);
     font-family: 'Rubik', sans-serif;
 }
@@ -38,43 +39,45 @@ ul {
     list-style-type: none;
 }
 
-button { /* deixar os botões 'zerados' para depois editar cada um por seu ID */
+button {
+    /* deixar os botões 'zerados' para depois editar cada um por seu ID */
     background-color: transparent;
     border: 0;
     border-radius: 0;
 }
 
-body{
+body {
     min-height: 100vh;
     background-color: var(--clr-gray);
 }
 
-
 /* parte da nav com a logo e os botões de tipos de pokemon */
 
-header{
-    padding-block: 1rem;  /* padding-block = top e buttom */
+header {
+    padding-block: 1rem;
+    /* padding-block = top e buttom */
     box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .25);
 }
 
-.nav{
+.nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
     padding-inline: 2rem;
     max-width: 1000px;
-    margin: 0 auto;  /* elementos centrados */
+    margin: 0 auto;
+    /* elementos centrados */
 }
 
-.nav-list{
+.nav-list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: .5rem;
 }
 
-.btn-header{
+.btn-header {
     background-color: var(--clr-gray);
     padding: .5rem;
     border-radius: 100vmax;
@@ -85,7 +88,7 @@ header{
     transition: .2s;
 }
 
-.btn-header:hover{
+.btn-header:hover {
     transform: scale(1.1);
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
 }
@@ -93,43 +96,46 @@ header{
 
 /* parte dos cards de pokemons */
 
-main{
+main {
     padding: 2rem;
     max-width: 1000px;
-    margin: 0 auto;  /* elementos centrados */
+    margin: 0 auto;
+    /* elementos centrados */
 }
 
-.pokemon-todos{
+.pokemon-todos {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-@media screen and (min-width: 470px){
-    .pokemon-todos{
+@media screen and (min-width: 470px) {
+    .pokemon-todos {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (min-width: 700px){
-    .pokemon-todos{
+@media screen and (min-width: 700px) {
+    .pokemon-todos {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-.pokemon{
+.pokemon {
     border-radius: 1rem;
     background-color: var(--clr-white);
     box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
     padding-block: 1rem;
     text-transform: uppercase;
     position: relative;
-    isolation: isolate; /* não deixa o z-index do pokemon-id-back fique atrás do .pokemon, nunca irá ficar atrás do card, apenas da imagem */
-    overflow: hidden;  /* para o .pokemon-id-back encolher e ficar dentro do card */
-    
+    isolation: isolate;
+    /* não deixa o z-index do pokemon-id-back fique atrás do .pokemon, nunca irá ficar atrás do card, apenas da imagem */
+    overflow: hidden;
+    /* para o .pokemon-id-back encolher e ficar dentro do card */
+
 }
 
-.pokemon-id-back{
+.pokemon-id-back {
     position: absolute;
     top: 1rem;
     left: 50%;
@@ -140,18 +146,18 @@ main{
     z-index: -1;
 }
 
-.pokemon-imagen{
+.pokemon-imagen {
     padding-inline: 1rem;
     display: flex;
     justify-content: center;
 }
 
-.pokemon-imagen img{
+.pokemon-imagen img {
     width: 100%;
     max-width: 6rem;
 }
 
-.pokemon-info{
+.pokemon-info {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -160,7 +166,7 @@ main{
     text-align: center;
 }
 
-.nombre-contenedor{
+.nombre-contenedor {
     display: flex;
     align-items: center;
     column-gap: .5rem;
@@ -168,61 +174,44 @@ main{
     justify-content: center;
 }
 
-.pokemon-id{  /* #id ao lado do nome do pokemon */
+.pokemon-id {
+    /* #id ao lado do nome do pokemon */
     background-color: var(--clr-gray);
     padding: .25rem .5rem;
     border-radius: 100vmax;
     font-weight: 500;
 }
 
-.pokemon-nombre{
+.pokemon-nombre {
     font-size: 1.4rem;
 }
 
-.pokemon-tipos{ 
+.pokemon-tipos {
     display: flex;
     gap: .5rem;
     font-size: .75rem;
     font-weight: 500;
-    flex-wrap: wrap; /* quando o card diminuir os elementos ficarem em coluna */
+    flex-wrap: wrap;
+    /* quando o card diminuir os elementos ficarem em coluna */
     justify-content: center;
 }
 
-.tipo{
+.tipo {
     padding: .25rem .5rem;
     border-radius: 100vmax;
 }
 
-.pokemon-stats{
+.pokemon-stats {
     display: flex;
     gap: 1rem;
     font-size: .85rem;
 }
 
-.stat{
+.stat {
     background-color: var(--clr-gray);
     padding: .25rem .5rem;
     border-radius: 100vmax;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Cor das letras e do Background de cada botão de acordo com o tipo de pokemon */
