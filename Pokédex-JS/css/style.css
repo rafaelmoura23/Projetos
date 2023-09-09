@@ -62,7 +62,9 @@ header{
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    padding: 1rem;
+    padding-inline: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;  /* elementos centrados */
 }
 
 .nav-list{
@@ -93,11 +95,114 @@ header{
 
 main{
     padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;  /* elementos centrados */
+}
+
+.pokemon-todos{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 470px){
+    .pokemon-todos{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .pokemon-todos{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.pokemon{
+    border-radius: 1rem;
+    background-color: var(--clr-white);
+    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
+    padding-block: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    isolation: isolate; /* não deixa o z-index do pokemon-id-back fique atrás do .pokemon, nunca irá ficar atrás do card, apenas da imagem */
+    overflow: hidden;  /* para o .pokemon-id-back encolher e ficar dentro do card */
+    
+}
+
+.pokemon-id-back{
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--clr-gray);
+    z-index: -1;
+}
+
+.pokemon-imagen{
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .pokemon-imagen img{
     width: 100%;
     max-width: 6rem;
+}
+
+.pokemon-info{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+.nombre-contenedor{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon-id{  /* #id ao lado do nome do pokemon */
+    background-color: var(--clr-gray);
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+    font-weight: 500;
+}
+
+.pokemon-nombre{
+    font-size: 1.4rem;
+}
+
+.pokemon-tipos{ 
+    display: flex;
+    gap: .5rem;
+    font-size: .75rem;
+    font-weight: 500;
+    flex-wrap: wrap; /* quando o card diminuir os elementos ficarem em coluna */
+    justify-content: center;
+}
+
+.tipo{
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+}
+
+.pokemon-stats{
+    display: flex;
+    gap: 1rem;
+    font-size: .85rem;
+}
+
+.stat{
+    background-color: var(--clr-gray);
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
 }
 
 
