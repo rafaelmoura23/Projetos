@@ -1,0 +1,190 @@
+1.Crie uma Classe que crie uma Matriz de Linha determinada pelo Usuário e Coluna determinadas pelo Usuário
+Preencha a Matriz com valores aleatórios entre 0 e 9 e imprimia a matriz
+Substitua os valores da matriz anterior pelo seguinte sistema:
+se i>j valor = 1 
+se i==j valor = 0
+se j>i valor = 2
+
+////////////////////////////
+
+        System.out.print("Informe o número de linhas: ");
+        int linhas = sc.nextInt();
+        System.out.print("Informe o número de colunas: ");
+        int colunas = sc.nextInt();
+
+        int[][] matriz = new int[linhas][colunas];
+
+  
+        // matriz random
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                matriz[i][j] = rd.nextInt(10);
+            }
+        }
+
+        // Printar a matriz random
+        System.out.println("Matriz Random: ");
+        for (int i = 0; i < linhas; i++) {
+        System.out.print("| ");
+            for (int j = 0; j < colunas; j++) {
+            System.out.print(matriz[i][j] +" ");
+            }
+            System.out.println("|");
+        }
+
+        // matriz com condições
+        for (int i = 0; i < linhas; i++) {
+            for (int j = 0; j < colunas; j++) {
+                if (i > j) {
+                    matriz[i][j] = 2;
+                } else if (i == j) {
+                    matriz[i][j] = 0;
+                } else {
+                    matriz[i][j] = 1;
+                }
+            }
+        }
+
+        // printar a matriz condicionada
+        System.out.println("Matriz Condicionada: ");
+        for (int i = 0; i < linhas; i++) {
+        System.out.print("| ");
+            for (int j = 0; j < colunas; j++) {
+            System.out.print(matriz[i][j] +" ");
+            }
+            System.out.println("|");
+        }
+    }
+}
+
+
+////////////////////////////////////
+
+2. Cria uma classe que: 
+Sortear um número de 0 a 1000;
+Pedir um palpite ao usuário. Se ele errar, informar se o palpite é maior ou menor do que o número sorteado.
+Pedir novos palpites até que o usuário acerte e, depois disso, mostrar em quantas tentativas ele acertou.
+
+////////////////////////////
+
+        int sorteio = rd.nextInt(10); // sorteia um número de 0 a 1000
+        
+        int palpite;
+        int contTentativas = 0;
+        
+
+        while(true) {
+        System.out.print("Digite o seu palpite (0 a 1000): ");
+        palpite = sc.nextInt();
+        
+        if (palpite < sorteio) {
+            System.out.println("Palpite menor do que o número sorteado.");
+        } else if (palpite > sorteio) {
+            System.out.println("Palpite maior do que o número sorteado.");
+        } else {
+            System.out.println("Acertastes o número em " + (contTentativas+1) + " tentativas");
+            break;
+        }      
+        contTentativas++;
+        }
+    }
+}
+
+
+//////////////////////////////////////////////
+
+3. Escreva um programa que: 
+Sortear o tamanho de uma vetor de minimo 100 e máximo 1000
+Construir o vetor
+Listar o vetor com números aleatórios de 1 a 100
+Exibir apenas os números pares do vetor 
+Exibir apenas os números impares do vetor
+Exibir a quantidade de números pares existem nas posições ímpares do vetor Exibir a quantidade de números impares existem nas posições pares do vetor
+
+///////////////////////////////////////////////////
+
+import java.util.Random;
+
+public class VetorAleatorio {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int tamanho = random.nextInt(901) + 100; // Sorteia o tamanho do vetor entre 100 e 1000
+
+        int[] vetor = new int[tamanho];
+
+        // Preenche o vetor com números aleatórios de 1 a 100
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = random.nextInt(100) + 1;
+        }
+
+        // Lista o vetor completo
+        System.out.println("Vetor completo:");
+        listarVetor(vetor);
+
+        // Exibe apenas os números pares
+        System.out.println("\nNúmeros pares:");
+        exibirPares(vetor);
+
+        // Exibe apenas os números ímpares
+        System.out.println("\nNúmeros ímpares:");
+        exibirImpares(vetor);
+
+        // Conta a quantidade de números pares nas posições ímpares
+        int paresNasPosicoesImpares = contarParesNasPosicoesImpares(vetor);
+        System.out.println("\nQuantidade de números pares nas posições ímpares: " + paresNasPosicoesImpares);
+
+        // Conta a quantidade de números ímpares nas posições pares
+        int imparesNasPosicoesPares = contarImparesNasPosicoesPares(vetor);
+        System.out.println("Quantidade de números ímpares nas posições pares: " + imparesNasPosicoesPares);
+    }
+
+    // Método para listar o vetor
+    public static void listarVetor(int[] vetor) {
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print(vetor[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Método para exibir apenas os números pares do vetor
+    public static void exibirPares(int[] vetor) {
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i] % 2 == 0) {
+                System.out.print(vetor[i] + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Método para exibir apenas os números ímpares do vetor
+    public static void exibirImpares(int[] vetor) {
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i] % 2 != 0) {
+                System.out.print(vetor[i] + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Método para contar a quantidade de números pares nas posições ímpares do vetor
+    public static int contarParesNasPosicoesImpares(int[] vetor) {
+        int contador = 0;
+        for (int i = 1; i < vetor.length; i += 2) {
+            if (vetor[i] % 2 == 0) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    // Método para contar a quantidade de números ímpares nas posições pares do vetor
+    public static int contarImparesNasPosicoesPares(int[] vetor) {
+        int contador = 0;
+        for (int i = 0; i < vetor.length; i += 2) {
+            if (vetor[i] % 2 != 0) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+}

@@ -1,0 +1,15 @@
+git init
+
+git status
+
+git add .
+
+git status
+
+git commit -m "name"
+
+git branch -M main
+
+git remote add origin https://github.com/rafaelmoura23/JAVA-DEVTarde.git
+
+git push -u origin main

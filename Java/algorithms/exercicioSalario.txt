@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Informe o Salário: ");
+		double salario = sc.nextDouble();
+		System.out.println("Informe o Total de Vendas efetuadas: ");
+		double vendas = sc.nextDouble();
+		if (vendas<=2500) {
+		double tresPorcent = (vendas*0.03);
+		double salarioTotal = tresPorcent + salario;
+		System.out.println("O seu salário total é de: " +salarioTotal);
+		}
+		else {
+		double ultra = ((vendas*0.03) +((vendas-2500)*0.05));
+		double salarioTotal1 = ultra +salario;
+		System.out.println("O seu salário total é de: " +salarioTotal1);
+		}
+			
+		}
+		
+	}

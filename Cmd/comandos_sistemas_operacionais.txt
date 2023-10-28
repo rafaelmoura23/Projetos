@@ -1,0 +1,19 @@
+sudo su - superusuário
+apt-get update - atualização dos programas
+apt-get upgrade - atualizar o sistema
+ctl l - limpa a tela do terminal
+ctl c - quando digita o comando errado
+ls - diretorios(pastas)ls
+mkdir espaço e o nome da pasta - criação de pasta
+rmdir espaço e o nome da paste - remover pastas
+
+server - wireless - computadores
+
+departamentos:
+portaria
+recepção
+serviço social
+departamento pessoal
+diretoria
+engenharia
+pcp

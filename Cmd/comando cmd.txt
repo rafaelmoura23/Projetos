@@ -1,0 +1,36 @@
+date - data e nova data
+date /t - retorna a data
+time - retorna a hora
+ctrl c - abandona o comando
+winver - configuração do windows
+UserAccountControlSettings - controle de conta do usuario
+wscui.cpl - segurança/ manutenção do windows (cpl - parte de configurações)
+control.exe /name Microsoft.Troubleshooting - central de solução de problemas
+control.exe - painel de controle
+compmgmt.msc - gerenciamento do computador (.msc - age diretamente nas atribuições do windows!)
+msinfo32.exe - informações do sistema (tipo cpu-z)
+eventvwr - visualizador de eventos, é um painel onde pode usar para solucionar problemas que não são aparentes
+appwiz.cpl - exibe a caixa de listagem de programas e recursos
+inetcpl.cpl - propriedades da internet
+resmon.exe - gerenciador de tarefas melhorado
+perfmon /report - gera um relatório detalhado de status de recursos do hardware e dos sistema
+
+rstrui.exe - restaurar arquivos e configurações do sistema
+
+* (checagem/correção/limpeza do windows)
+chkdsk /r - verificar a integridade do sistema de arquivos, avalia o disco rigido para encontrar e corrigir problemas(windows), apenas pastas do windows
+sfc / scannow - verifica todos os arquivos, substituindo os arquivos corrompidos por uma cópia
+DISM /Online /Cleanup-image /Restorehealth - repara arquivos corrompidos ou ausentes do sistema operacional, garantindo que os erros sejam corrigidos
+*
+@echo off - desabilita a exibição no prompt
+color 80 - comando para alterar as cores do prompt
+echo computador
+
+
+
+
+
+
+
+
+

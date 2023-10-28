@@ -1,0 +1,81 @@
+.planets {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+  }
+  
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .mercury {
+    background-color: #c7b298;
+    top: 300px;
+    left: 100px;
+    animation-name: mercury;
+  }
+  
+  .venus {
+    background-color: #d2a679;
+    top: 200px;
+    left: 500px;
+    animation-name: venus;
+  }
+  
+  .earth {
+    background-color: #5a9bd5;
+    top: 50px;
+    left: 250px;
+    animation-name: earth;
+  }
+  
+  .mars {
+    background-color: #c06d5a;
+    top: 500px;
+    left: 450px;
+    animation-name: mars;
+  }
+  
+  @keyframes mercury {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(400px, 200px);
+    }
+  }
+  
+  @keyframes venus {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-400px, -200px);
+    }
+  }
+  
+  @keyframes earth {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-200px, 400px);
+    }
+  }
+  
+  @keyframes mars {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(200px, -400px);
+    }
+  }
+  

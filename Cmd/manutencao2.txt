@@ -1,0 +1,199 @@
+@echo off
+cls
+:menu
+color 09
+
+date /t
+
+echo Computador: %computername%           Usuario: %username%
+
+echo                     MENU TAREFAS
+echo  =======================================================
+echo * 1. Esvaziar a Lixeira				     *
+echo * 2. Fazer Backup                                       *
+echo * 3. Escanear Disco Local                               *
+echo * 4. Painel de Controle                                 *
+echo * 5. Edicao da Data                                     *
+echo * 6. Horario                                            *
+echo * 7. Configuracoes do Windows                           *
+echo * 8. Controle do Usuario                                *
+echo * 9. Seguranca/Manutencao                               *
+echo * 10. Central de Solucao de Problemas                   *
+echo * 11. Gerenciamento do Computador                       *
+echo * 12. Informacoes do Sistema                            *
+echo * 13. Visualizacaoo de Eventos                          *
+echo * 14. Programas e Recursos                              *
+echo * 15. Propriedades da Internet                          *
+echo * 16. Gerenciador de Tarefas 2.0                        *
+echo * 17. Relatório de Status de Recursos                   *
+echo * 18. Sair                                              *
+echo  =======================================================
+
+set /p opcao= Escolha uma opcao:
+echo --------------------------------------------------------
+if %opcao% equ 1 goto opcao1
+if %opcao% equ 2 goto opcao2
+if %opcao% equ 3 goto opcao3
+if %opcao% equ 4 goto opcao4
+if %opcao% equ 5 goto opcao5
+if %opcao% equ 6 goto opcao6
+if %opcao% equ 7 goto opcao7
+if %opcao% equ 8 goto opcao8
+if %opcao% equ 9 goto opcao9
+if %opcao% equ 10 goto opcao10
+if %opcao% equ 11 goto opcao11
+if %opcao% equ 12 goto opcao12
+if %opcao% equ 13 goto opcao13
+if %opcao% equ 14 goto opcao14
+if %opcao% equ 15 goto opcao15
+if %opcao% equ 16 goto opcao16
+if %opcao% equ 17 goto opcao17
+if %opcao% equ 18 goto opcao18
+if %opcao% GEQ 19 goto opcao19
+
+
+:opcao1
+cls
+rd /S /Q c:\$Recycle.bin
+echo =========================================================
+echo *                Lixeira Esvaziada                       *  
+echo =========================================================
+pause
+goto menu
+
+:opcao2
+cls
+xcopy /T /C C:\Users\Aluno\Documents\*.*  C:\Users\Aluno\Desktop
+echo =========================================================
+echo *                Backup Concluido                        *
+echo =========================================================
+pause
+goto menu
+
+:opcao3
+cls
+echo =========================================================
+echo *                Escaneamento de Disco                   *
+echo =========================================================
+chkdsk c:
+pause 
+goto menu
+
+:opcao4
+cls
+control.exe
+echo =========================================================
+echo *                Painel de Controle Aberto               *
+echo =========================================================
+pause
+goto menu
+
+:opcao5
+cls
+date /t
+echo =========================================================
+echo *                Data Atual e Edicao de Data             *
+echo =========================================================
+pause
+goto menu
+
+:opcao6
+cls
+time
+echo =========================================================
+echo *                Horario de Brasilia                     *
+echo =========================================================
+pause
+goto menu
+
+:opcao7
+cls
+winver
+pause
+goto menu
+
+:opcao8
+cls
+UserAccountControlSettings
+pause
+goto menu
+
+:opcao9
+cls
+wscui.cpl
+pause 
+goto menu
+
+:opcao10
+cls
+control.exe /name Microsoft.Troubleshooting
+pause 
+goto menu
+
+:opcao11
+cls
+compmgmt.msc
+pause
+goto menu
+
+:opcao12
+cls
+msinfo32
+pause 
+goto menu
+
+:opcao13
+cls
+eventvwr
+pause 
+goto menu
+
+:opcao14
+cls
+appwiz.cpl
+pause
+goto menu
+
+:opcao15
+cls
+inetcpl.cpl
+pause
+goto menu
+
+:opcao16
+cls
+resmon.exe
+pause
+goto menu
+
+:opcao17
+cls
+perfmon /report
+pause 
+goto menu
+
+:opcao18
+cls
+exit
+
+:opcao19
+echo =========================================================
+echo *      Opcao Invalida! Escolha outra opcao do menu       *
+echo =========================================================
+pause
+goto menu
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
